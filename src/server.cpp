@@ -7,6 +7,8 @@
 void setup_routes(httplib::Server& svr)
 {
     svr.Get(API::Endpoints::TAGS, API::Handler::tags);
+    svr.Get(API::Endpoints::PS, API::Handler::ps);
+    svr.Get(API::Endpoints::VERSION, API::Handler::version);
 }
 
 int main()
