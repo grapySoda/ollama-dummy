@@ -24,7 +24,17 @@ FetchContent_Declare(
 
 FetchContent_MakeAvailable(json)
 
-add_executable(server main.cpp)
+file(GLOB_RECURSE SRC_FILES
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/api/*.cpp
+)
+
+add_executable(server ${SRC_FILES})
+
+target_include_directories(server PUBLIC
+    ${CMAKE_CURRENT_SOURCE_DIR}/include
+    ${CMAKE_CURRENT_SOURCE_DIR}/src
+)
 
 # Include header-only targets
 target_link_libraries(server
