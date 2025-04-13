@@ -14,7 +14,7 @@ namespace API::Handler
         /* Dumymy response */
         json response = json::parse(std::ifstream(Dummy::Response::TAGS));
 
-        res.set_content(response.dump(), API::MIME::JSON);
+        res.set_content(response.dump(), API::Header::Type::JSON);
     }
 
     void ps(const httplib::Request&, httplib::Response& res)
@@ -22,7 +22,7 @@ namespace API::Handler
         /* Dumymy response */
         json response = json::parse(std::ifstream(Dummy::Response::PS));
 
-        res.set_content(response.dump(), API::MIME::JSON);
+        res.set_content(response.dump(), API::Header::Type::JSON);
     }
 
     void version(const httplib::Request&, httplib::Response& res)
@@ -30,6 +30,6 @@ namespace API::Handler
         /* Dumymy response */
         json response = json::parse(std::ifstream(Dummy::Response::VERSION));
 
-        res.set_content(response.dump(), API::MIME::JSON);
+        res.set_content(response.dump(), API::Header::Type::JSON);
     }
 }  // namespace API::Handler

@@ -1,10 +1,13 @@
 #pragma once
 
-namespace API::MIME
+namespace API::Header
 {
-    inline constexpr const char* TEXT = "text/plain";
-    inline constexpr const char* JSON = "application/json";
-}  // namespace API::MIME
+    namespace Type
+    {
+        inline constexpr const char* TEXT = "text/plain";
+        inline constexpr const char* JSON = "application/json";
+    }  // namespace Type
+}  // namespace API::Header
 
 namespace Dummy::Response
 {
